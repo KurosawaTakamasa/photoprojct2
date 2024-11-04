@@ -1,0 +1,14 @@
+<!-- ベーステンプレートを適用 -->
+{% extends "base.html" %}
+<!-- タグの表示名 -->
+{% block title %}Post Success{% endblock %}
+
+<!-- メイン -->
+{% block contents %}
+<br><br>
+<div class="container">
+    <h4>投稿が完了しました</h4>
+    <p><a href="{% url 'photo:index' %}">トップページへ</a></p>
+</div>
+{% endblock %}
+

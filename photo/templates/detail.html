@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Photo Detail{% endblock title %}
+
+{% block contents %}
+<br>
+<div class="container">
+    <h2>{{object.title}}</h2>
+    <p>{{object.comment}}</p>
+    <br>
+    <p>{{object.posted_at}}に投稿</p>
+    <p><img src="{{object.image1.url}}"></p>
+    {% if object.image2 %}
+     <p><img src="{{object.image2.url}}"></p>
+    
+    {% endif %}
+
+    
+    <!-- 投稿写真がログイン中のユーザのものであれば 
+                                    削除ボタンを表示する-->
+    {% if request.user == object.user %}
+            <a href="{% url 'photo:photo_delete' object.pk %}"
+                class="btn btn-primary my-2">削除する</a>
+    {% endif %}
+
+</div>
+{% endblock contents %}
+
+
+

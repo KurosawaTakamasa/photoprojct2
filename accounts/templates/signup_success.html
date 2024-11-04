@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% comment %} ページタイトルを設定する {% endcomment %}
+{% block title %}Regisration Complete{% endblock %}
+
+{% comment %} メイン {% endcomment %}
+{% block contents  %}
+<div class="container">
+    <h3>登録が完了しました</h3>
+    <p><a href="{% url 'accounts:login' %}">ログインはこちら</a></p>
+</div>
+{% endblock %}
